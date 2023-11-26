@@ -14,9 +14,9 @@ def compress_image(input_path, output_path, quality=85):
         None
     """
     try:
-        # Open the image
+        
         with Image.open(input_path) as img:
-            # Save the image with compression
+            
             img.save(output_path, quality=quality)
             print(f"Image compressed successfully and saved to {output_path}")
     except Exception as e:
@@ -35,11 +35,11 @@ def compress_all_images(input_folder, output_folder, quality=85):
         None
     """
     try:
-        # Create the output folder if it doesn't exist
+        
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
 
-        # Process each file in the input folder
+       
         for filename in os.listdir(input_folder):
             if filename.endswith(('.jpg', '.jpeg', '.png')):
                 input_path = os.path.join(input_folder, filename)
@@ -48,7 +48,7 @@ def compress_all_images(input_folder, output_folder, quality=85):
     except Exception as e:
         print(f"Error: {e}")
 
-# Example usage:
+
 input_folder = "input_images"
 output_folder = "compressed_images"
 compress_all_images(input_folder, output_folder, quality=85)
